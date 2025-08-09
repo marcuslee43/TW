@@ -18,8 +18,19 @@ export default function LocationsPage() {
             <h3 className="text-2xl font-extrabold">{loc.name}</h3>
             <p className="mt-2 text-white/70">{loc.address}<br/>{loc.cityStateZip}</p>
             <div className="mt-4 flex gap-3">
-              <Link href={loc.orderUrl} className="btn btn-primary">Order Online</Link>
-              <Link href={`https://maps.google.com/?q=${encodeURIComponent(loc.mapQuery)}`} className="btn">Open in Maps</Link>
+              // replace the external Links with anchors
+            <a href={loc.orderUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              Order Online
+            </a>
+
+            <a
+              href={`https://maps.google.com/?q=${encodeURIComponent(loc.mapQuery)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+            >
+              Open in Maps
+            </a>
             </div>
           </div>
         ))}

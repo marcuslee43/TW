@@ -27,9 +27,9 @@ export default function NavBar() {
 
           <nav className="hidden md:flex items-center gap-6">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-brand-red transition-colors">
+              <a key={l.href} href={l.href} className="hover:text-brand-red transition-colors">
                 {l.label}
-              </Link>
+              </a>
             ))}
             <div className="relative">
               <button
@@ -56,9 +56,9 @@ export default function NavBar() {
         {open && (
           <nav className="mt-3 grid gap-2 md:hidden">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="block rounded-xl px-3 py-2 hover:bg-white/10">
+              <a key={l.href} href={l.href} className="block rounded-xl px-3 py-2 hover:bg-white/10">
                 {l.label}
-              </Link>
+              </a>
             ))}
             <div className="grid gap-2">
               <Link href="https://www.toasttab.com/tez-wingz/v3" className="btn btn-primary">Order Midwest City</Link>

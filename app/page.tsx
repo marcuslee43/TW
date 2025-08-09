@@ -17,7 +17,9 @@ export default function HomePage() {
               <h3 className="text-2xl font-extrabold">{loc.name}</h3>
               <p className="mt-2 text-white/70">{loc.address}<br/>{loc.cityStateZip}</p>
               <div className="mt-4 flex gap-3">
-                <Link href={loc.orderUrl} className="btn btn-primary">Order Online</Link>
+                <a href={loc.orderUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                  Order Online
+                </a>
                 <Link href={`/locations`} className="btn">More Info</Link>
               </div>
             </div>
@@ -36,13 +38,13 @@ export default function HomePage() {
             { title: "BONE-LESS", desc: "No bones. All flavor.", href: "/menu" },
             { title: "CATFISH & SHRIMP", desc: "Southern staples. Chicago swagger.", href: "/menu" },
           ].map((card) => (
-            <Link key={card.title} href={card.href} className="card hover:shadow-glow transition-shadow">
+            <a key={card.title} href={card.href} className="card hover:shadow-glow transition-shadow">
               <div className="chicago-star"></div>
               <div className="mt-2">
                 <h3 className="text-2xl font-extrabold">{card.title}</h3>
                 <p className="mt-2 text-white/70">{card.desc}</p>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
         <div className="mt-6">
