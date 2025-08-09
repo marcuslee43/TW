@@ -1,0 +1,87 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #FF0000;
+}
+
+html, body {
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #fff, var(--accent), #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold transition-transform duration-200;
+  background: linear-gradient(110deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255,0,0,0.25), inset 0 0 0 1px rgba(255,0,0,0.4);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #FF0000, #a80000);
+  border: none;
+}
+
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.35), rgba(255,255,255,0));
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+
+.sparkle::before, .sparkle::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 6px;
+  left: 6px;
+  background: radial-gradient(circle, #fff 0, #fff 35%, transparent 60%);
+  filter: drop-shadow(0 0 6px rgba(255,255,255,.6));
+  transform: rotate(45deg);
+}
+
+.chicago-star {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 24px solid var(--accent);
+}
+.chicago-star:before, .chicago-star:after {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 8px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 24px solid var(--accent);
+  transform: rotate(180deg);
+}
+
+.card {
+  @apply glass rounded-3xl p-6 shadow-glow relative overflow-hidden;
+}
